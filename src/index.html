@@ -132,8 +132,12 @@
             }
             
             setCell (index) {
+             if(this.gameActive===false){
+                return undefined;
             }
-
+            this.gameState[index] = this.currentPlayer;
+            return this.currentPlayer;
+            }
             endTurn() {
                 this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
             }
